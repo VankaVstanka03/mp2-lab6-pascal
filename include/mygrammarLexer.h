@@ -1,5 +1,5 @@
 
-// Generated from mygrammar.g4 by ANTLR 4.12.0
+// Generated from mygrammar.g4 by ANTLR 4.13.0
 
 #pragma once
 
@@ -12,8 +12,8 @@
 class  mygrammarLexer : public antlr4::Lexer {
 public:
   enum {
-    INT = 1, SUB = 2, MUL = 3, ADD = 4, DIV = 5, SEP = 6, LBR = 7, RBR = 8, 
-    WS = 9
+    INT = 1, DOUBLE = 2, SUB = 3, MUL = 4, ADD = 5, DIV = 6, SEP = 7, LBR = 8, 
+    RBR = 9, WS = 10
   };
 
   explicit mygrammarLexer(antlr4::CharStream *input);

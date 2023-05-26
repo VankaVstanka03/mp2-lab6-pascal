@@ -1,5 +1,5 @@
 
-// Generated from mygrammar.g4 by ANTLR 4.12.0
+// Generated from mygrammar.g4 by ANTLR 4.13.0
 
 #pragma once
 
@@ -19,15 +19,21 @@ public:
   /**
    * Visit parse trees produced by mygrammarParser.
    */
-    virtual std::any visitExpr(mygrammarParser::ExprContext *context) = 0;
+    virtual std::any visitLexprR(mygrammarParser::LexprRContext *context) = 0;
 
-    virtual std::any visitTerm(mygrammarParser::TermContext *context) = 0;
+    virtual std::any visitDOUBLE(mygrammarParser::DOUBLEContext *context) = 0;
 
-    virtual std::any visitFactor(mygrammarParser::FactorContext *context) = 0;
+    virtual std::any visitExprADDexpr(mygrammarParser::ExprADDexprContext *context) = 0;
 
-    virtual std::any visitRow(mygrammarParser::RowContext *context) = 0;
+    virtual std::any visitExprMULexpr(mygrammarParser::ExprMULexprContext *context) = 0;
 
-    virtual std::any visitProg(mygrammarParser::ProgContext *context) = 0;
+    virtual std::any visitINTEGER(mygrammarParser::INTEGERContext *context) = 0;
+
+    virtual std::any visitExpr_sep(mygrammarParser::Expr_sepContext *context) = 0;
+
+    virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *context) = 0;
+
+    virtual std::any visitOneLineProg(mygrammarParser::OneLineProgContext *context) = 0;
 
 
 };

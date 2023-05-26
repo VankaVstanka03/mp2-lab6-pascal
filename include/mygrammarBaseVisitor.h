@@ -1,9 +1,9 @@
 
-// Generated from mygrammar.g4 by ANTLR 4.12.0
+// Generated from mygrammar.g4 by ANTLR 4.13.0
 
 #pragma once
 
-#include <any>
+
 #include "antlr4-runtime/antlr4-runtime.h"
 #include "mygrammarVisitor.h"
 
@@ -15,23 +15,35 @@
 class  mygrammarBaseVisitor : public mygrammarVisitor {
 public:
 
-  virtual std::any visitExpr(mygrammarParser::ExprContext *ctx) override {
+  virtual std::any visitLexprR(mygrammarParser::LexprRContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitTerm(mygrammarParser::TermContext *ctx) override {
+  virtual std::any visitDOUBLE(mygrammarParser::DOUBLEContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitFactor(mygrammarParser::FactorContext *ctx) override {
+  virtual std::any visitExprADDexpr(mygrammarParser::ExprADDexprContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitRow(mygrammarParser::RowContext *ctx) override {
+  virtual std::any visitExprMULexpr(mygrammarParser::ExprMULexprContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitProg(mygrammarParser::ProgContext *ctx) override {
+  virtual std::any visitINTEGER(mygrammarParser::INTEGERContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitExpr_sep(mygrammarParser::Expr_sepContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitOneLineProg(mygrammarParser::OneLineProgContext *ctx) override {
     return visitChildren(ctx);
   }
 

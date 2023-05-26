@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.24)
+
 
 set(PROJECT_NAME pascal_interpreter)
-project(${PROJECT_NAME})
+set(CMAKE_CXX_STANDARD 17)
+project(${PROJECT_NAME} VERSION 1.0 LANGUAGES CXX)
 # TODO(Kornyakov): not sure if these lines are needed
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
 if(NOT CMAKE_BUILD_TYPE)
@@ -15,8 +17,12 @@ set(MP2_LIBRARY "${PROJECT_NAME}")
 set(MP2_TESTS   "test_${PROJECT_NAME}")
 set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 include_directories("${MP2_INCLUDE}" gtest)
-include_directories("../../antlr4/runtime/Cpp/build/bin/include" antlr4)
+#include_directories(3rdparty/antlr4/runtime/Cpp/build/bin/include)
 
+set(ANTLR_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/include")
+set(CMAKE_SYSTEM_PROGRAM_PATH "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/bin/antlr4-runtime.dll")
+set(antlr4-runtime_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build")
+set(ANTLR4_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/lib")
 
 # BUILD
 add_subdirectory(src)
