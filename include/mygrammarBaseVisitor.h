@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "antlr4-runtime/antlr4-runtime.h"
+#include "antlr4-runtime.h"
 #include "mygrammarVisitor.h"
 
 
@@ -16,6 +16,10 @@ class  mygrammarBaseVisitor : public mygrammarVisitor {
 public:
 
   virtual std::any visitLexprR(mygrammarParser::LexprRContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitVAR(mygrammarParser::VARContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -31,19 +35,23 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitINTEGER(mygrammarParser::INTEGERContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitExpr_sep(mygrammarParser::Expr_sepContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *ctx) override {
+  virtual std::any visitADD_VAR(mygrammarParser::ADD_VARContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitCout_expr_sep(mygrammarParser::Cout_expr_sepContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual std::any visitOneLineProg(mygrammarParser::OneLineProgContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *ctx) override {
     return visitChildren(ctx);
   }
 

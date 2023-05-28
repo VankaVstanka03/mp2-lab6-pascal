@@ -55,28 +55,31 @@ void mygrammarParserInitialize() {
       "expr", "row", "prog"
     },
     std::vector<std::string>{
-      "", "", "", "'-'", "'*'", "'+'", "'/'", "';'", "'('", "')'"
+      "", "", "", "'='", "'<<'", "'-'", "'*'", "'+'", "'/'", "';'", "'('", 
+      "')'"
     },
     std::vector<std::string>{
-      "", "INT", "DOUBLE", "SUB", "MUL", "ADD", "DIV", "SEP", "LBR", "RBR", 
-      "WS"
+      "", "DOUBLE", "NAME", "EQ", "COUT", "SUB", "MUL", "ADD", "DIV", "SEP", 
+      "LBR", "RBR", "WS"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,10,45,2,0,7,0,2,1,7,1,2,2,7,2,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,14,
+  	4,1,12,52,2,0,7,0,2,1,7,1,2,2,7,2,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,14,
   	8,0,1,0,1,0,1,0,1,0,1,0,1,0,5,0,22,8,0,10,0,12,0,25,9,0,1,1,1,1,1,1,1,
-  	2,1,2,1,2,3,2,33,8,2,1,2,1,2,1,2,3,2,38,8,2,5,2,40,8,2,10,2,12,2,43,9,
-  	2,1,2,0,2,0,4,3,0,2,4,0,2,2,0,4,4,6,6,2,0,3,3,5,5,48,0,13,1,0,0,0,2,26,
-  	1,0,0,0,4,29,1,0,0,0,6,7,6,0,-1,0,7,8,5,8,0,0,8,9,3,0,0,0,9,10,5,9,0,
-  	0,10,14,1,0,0,0,11,14,5,1,0,0,12,14,5,2,0,0,13,6,1,0,0,0,13,11,1,0,0,
-  	0,13,12,1,0,0,0,14,23,1,0,0,0,15,16,10,5,0,0,16,17,7,0,0,0,17,22,3,0,
-  	0,6,18,19,10,4,0,0,19,20,7,1,0,0,20,22,3,0,0,5,21,15,1,0,0,0,21,18,1,
-  	0,0,0,22,25,1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,0,24,1,1,0,0,0,25,23,1,
-  	0,0,0,26,27,3,0,0,0,27,28,5,7,0,0,28,3,1,0,0,0,29,30,6,2,-1,0,30,32,3,
-  	2,1,0,31,33,5,0,0,1,32,31,1,0,0,0,32,33,1,0,0,0,33,41,1,0,0,0,34,35,10,
-  	1,0,0,35,37,3,2,1,0,36,38,5,0,0,1,37,36,1,0,0,0,37,38,1,0,0,0,38,40,1,
-  	0,0,0,39,34,1,0,0,0,40,43,1,0,0,0,41,39,1,0,0,0,41,42,1,0,0,0,42,5,1,
-  	0,0,0,43,41,1,0,0,0,6,13,21,23,32,37,41
+  	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,39,8,1,1,2,1,2,3,2,43,8,2,1,2,1,
+  	2,1,2,3,2,48,8,2,3,2,50,8,2,1,2,0,1,0,3,0,2,4,0,2,2,0,6,6,8,8,2,0,5,5,
+  	7,7,57,0,13,1,0,0,0,2,38,1,0,0,0,4,49,1,0,0,0,6,7,6,0,-1,0,7,8,5,10,0,
+  	0,8,9,3,0,0,0,9,10,5,11,0,0,10,14,1,0,0,0,11,14,5,1,0,0,12,14,5,2,0,0,
+  	13,6,1,0,0,0,13,11,1,0,0,0,13,12,1,0,0,0,14,23,1,0,0,0,15,16,10,5,0,0,
+  	16,17,7,0,0,0,17,22,3,0,0,6,18,19,10,4,0,0,19,20,7,1,0,0,20,22,3,0,0,
+  	5,21,15,1,0,0,0,21,18,1,0,0,0,22,25,1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,
+  	0,24,1,1,0,0,0,25,23,1,0,0,0,26,27,3,0,0,0,27,28,5,9,0,0,28,39,1,0,0,
+  	0,29,30,5,2,0,0,30,31,5,3,0,0,31,32,3,0,0,0,32,33,5,9,0,0,33,39,1,0,0,
+  	0,34,35,5,4,0,0,35,36,3,0,0,0,36,37,5,9,0,0,37,39,1,0,0,0,38,26,1,0,0,
+  	0,38,29,1,0,0,0,38,34,1,0,0,0,39,3,1,0,0,0,40,42,3,2,1,0,41,43,5,0,0,
+  	1,42,41,1,0,0,0,42,43,1,0,0,0,43,50,1,0,0,0,44,45,3,2,1,0,45,47,3,4,2,
+  	0,46,48,5,0,0,1,47,46,1,0,0,0,47,48,1,0,0,0,48,50,1,0,0,0,49,40,1,0,0,
+  	0,49,44,1,0,0,0,50,5,1,0,0,0,7,13,21,23,38,42,47,49
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -163,6 +166,21 @@ std::any mygrammarParser::LexprRContext::accept(tree::ParseTreeVisitor *visitor)
   else
     return visitor->visitChildren(this);
 }
+//----------------- VARContext ------------------------------------------------------------------
+
+tree::TerminalNode* mygrammarParser::VARContext::NAME() {
+  return getToken(mygrammarParser::NAME, 0);
+}
+
+mygrammarParser::VARContext::VARContext(ExprContext *ctx) { copyFrom(ctx); }
+
+
+std::any mygrammarParser::VARContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<mygrammarVisitor*>(visitor))
+    return parserVisitor->visitVAR(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- DOUBLEContext ------------------------------------------------------------------
 
 tree::TerminalNode* mygrammarParser::DOUBLEContext::DOUBLE() {
@@ -232,21 +250,6 @@ std::any mygrammarParser::ExprMULexprContext::accept(tree::ParseTreeVisitor *vis
   else
     return visitor->visitChildren(this);
 }
-//----------------- INTEGERContext ------------------------------------------------------------------
-
-tree::TerminalNode* mygrammarParser::INTEGERContext::INT() {
-  return getToken(mygrammarParser::INT, 0);
-}
-
-mygrammarParser::INTEGERContext::INTEGERContext(ExprContext *ctx) { copyFrom(ctx); }
-
-
-std::any mygrammarParser::INTEGERContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<mygrammarVisitor*>(visitor))
-    return parserVisitor->visitINTEGER(this);
-  else
-    return visitor->visitChildren(this);
-}
 
 mygrammarParser::ExprContext* mygrammarParser::expr() {
    return expr(0);
@@ -290,21 +293,21 @@ mygrammarParser::ExprContext* mygrammarParser::expr(int precedence) {
         break;
       }
 
-      case mygrammarParser::INT: {
-        _localctx = _tracker.createInstance<INTEGERContext>(_localctx);
-        _ctx = _localctx;
-        previousContext = _localctx;
-        setState(11);
-        match(mygrammarParser::INT);
-        break;
-      }
-
       case mygrammarParser::DOUBLE: {
         _localctx = _tracker.createInstance<DOUBLEContext>(_localctx);
         _ctx = _localctx;
         previousContext = _localctx;
-        setState(12);
+        setState(11);
         match(mygrammarParser::DOUBLE);
+        break;
+      }
+
+      case mygrammarParser::NAME: {
+        _localctx = _tracker.createInstance<VARContext>(_localctx);
+        _ctx = _localctx;
+        previousContext = _localctx;
+        setState(12);
+        match(mygrammarParser::NAME);
         break;
       }
 
@@ -420,6 +423,56 @@ std::any mygrammarParser::Expr_sepContext::accept(tree::ParseTreeVisitor *visito
   else
     return visitor->visitChildren(this);
 }
+//----------------- ADD_VARContext ------------------------------------------------------------------
+
+tree::TerminalNode* mygrammarParser::ADD_VARContext::NAME() {
+  return getToken(mygrammarParser::NAME, 0);
+}
+
+tree::TerminalNode* mygrammarParser::ADD_VARContext::EQ() {
+  return getToken(mygrammarParser::EQ, 0);
+}
+
+mygrammarParser::ExprContext* mygrammarParser::ADD_VARContext::expr() {
+  return getRuleContext<mygrammarParser::ExprContext>(0);
+}
+
+tree::TerminalNode* mygrammarParser::ADD_VARContext::SEP() {
+  return getToken(mygrammarParser::SEP, 0);
+}
+
+mygrammarParser::ADD_VARContext::ADD_VARContext(RowContext *ctx) { copyFrom(ctx); }
+
+
+std::any mygrammarParser::ADD_VARContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<mygrammarVisitor*>(visitor))
+    return parserVisitor->visitADD_VAR(this);
+  else
+    return visitor->visitChildren(this);
+}
+//----------------- Cout_expr_sepContext ------------------------------------------------------------------
+
+tree::TerminalNode* mygrammarParser::Cout_expr_sepContext::COUT() {
+  return getToken(mygrammarParser::COUT, 0);
+}
+
+mygrammarParser::ExprContext* mygrammarParser::Cout_expr_sepContext::expr() {
+  return getRuleContext<mygrammarParser::ExprContext>(0);
+}
+
+tree::TerminalNode* mygrammarParser::Cout_expr_sepContext::SEP() {
+  return getToken(mygrammarParser::SEP, 0);
+}
+
+mygrammarParser::Cout_expr_sepContext::Cout_expr_sepContext(RowContext *ctx) { copyFrom(ctx); }
+
+
+std::any mygrammarParser::Cout_expr_sepContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<mygrammarVisitor*>(visitor))
+    return parserVisitor->visitCout_expr_sep(this);
+  else
+    return visitor->visitChildren(this);
+}
 mygrammarParser::RowContext* mygrammarParser::row() {
   RowContext *_localctx = _tracker.createInstance<RowContext>(_ctx, getState());
   enterRule(_localctx, 2, mygrammarParser::RuleRow);
@@ -432,12 +485,48 @@ mygrammarParser::RowContext* mygrammarParser::row() {
     exitRule();
   });
   try {
-    _localctx = _tracker.createInstance<mygrammarParser::Expr_sepContext>(_localctx);
-    enterOuterAlt(_localctx, 1);
-    setState(26);
-    expr(0);
-    setState(27);
-    match(mygrammarParser::SEP);
+    setState(38);
+    _errHandler->sync(this);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
+    case 1: {
+      _localctx = _tracker.createInstance<mygrammarParser::Expr_sepContext>(_localctx);
+      enterOuterAlt(_localctx, 1);
+      setState(26);
+      expr(0);
+      setState(27);
+      match(mygrammarParser::SEP);
+      break;
+    }
+
+    case 2: {
+      _localctx = _tracker.createInstance<mygrammarParser::ADD_VARContext>(_localctx);
+      enterOuterAlt(_localctx, 2);
+      setState(29);
+      match(mygrammarParser::NAME);
+      setState(30);
+      match(mygrammarParser::EQ);
+      setState(31);
+      expr(0);
+      setState(32);
+      match(mygrammarParser::SEP);
+      break;
+    }
+
+    case 3: {
+      _localctx = _tracker.createInstance<mygrammarParser::Cout_expr_sepContext>(_localctx);
+      enterOuterAlt(_localctx, 3);
+      setState(34);
+      match(mygrammarParser::COUT);
+      setState(35);
+      expr(0);
+      setState(36);
+      match(mygrammarParser::SEP);
+      break;
+    }
+
+    default:
+      break;
+    }
    
   }
   catch (RecognitionException &e) {
@@ -466,12 +555,12 @@ void mygrammarParser::ProgContext::copyFrom(ProgContext *ctx) {
 
 //----------------- Prog_rowContext ------------------------------------------------------------------
 
-mygrammarParser::ProgContext* mygrammarParser::Prog_rowContext::prog() {
-  return getRuleContext<mygrammarParser::ProgContext>(0);
-}
-
 mygrammarParser::RowContext* mygrammarParser::Prog_rowContext::row() {
   return getRuleContext<mygrammarParser::RowContext>(0);
+}
+
+mygrammarParser::ProgContext* mygrammarParser::Prog_rowContext::prog() {
+  return getRuleContext<mygrammarParser::ProgContext>(0);
 }
 
 tree::TerminalNode* mygrammarParser::Prog_rowContext::EOF() {
@@ -506,99 +595,82 @@ std::any mygrammarParser::OneLineProgContext::accept(tree::ParseTreeVisitor *vis
   else
     return visitor->visitChildren(this);
 }
-
 mygrammarParser::ProgContext* mygrammarParser::prog() {
-   return prog(0);
-}
-
-mygrammarParser::ProgContext* mygrammarParser::prog(int precedence) {
-  ParserRuleContext *parentContext = _ctx;
-  size_t parentState = getState();
-  mygrammarParser::ProgContext *_localctx = _tracker.createInstance<ProgContext>(_ctx, parentState);
-  mygrammarParser::ProgContext *previousContext = _localctx;
-  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
-  size_t startState = 4;
-  enterRecursionRule(_localctx, 4, mygrammarParser::RuleProg, precedence);
-
-    
+  ProgContext *_localctx = _tracker.createInstance<ProgContext>(_ctx, getState());
+  enterRule(_localctx, 4, mygrammarParser::RuleProg);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
 #else
   auto onExit = finally([=] {
 #endif
-    unrollRecursionContexts(parentContext);
+    exitRule();
   });
   try {
-    size_t alt;
-    enterOuterAlt(_localctx, 1);
-    _localctx = _tracker.createInstance<OneLineProgContext>(_localctx);
-    _ctx = _localctx;
-    previousContext = _localctx;
-
-    setState(30);
-    row();
-    setState(32);
+    setState(49);
     _errHandler->sync(this);
-
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx)) {
     case 1: {
-      setState(31);
-      match(mygrammarParser::EOF);
+      _localctx = _tracker.createInstance<mygrammarParser::OneLineProgContext>(_localctx);
+      enterOuterAlt(_localctx, 1);
+      setState(40);
+      row();
+      setState(42);
+      _errHandler->sync(this);
+
+      switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx)) {
+      case 1: {
+        setState(41);
+        match(mygrammarParser::EOF);
+        break;
+      }
+
+      default:
+        break;
+      }
+      break;
+    }
+
+    case 2: {
+      _localctx = _tracker.createInstance<mygrammarParser::Prog_rowContext>(_localctx);
+      enterOuterAlt(_localctx, 2);
+      setState(44);
+      row();
+      setState(45);
+      prog();
+      setState(47);
+      _errHandler->sync(this);
+
+      switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx)) {
+      case 1: {
+        setState(46);
+        match(mygrammarParser::EOF);
+        break;
+      }
+
+      default:
+        break;
+      }
       break;
     }
 
     default:
       break;
     }
-    _ctx->stop = _input->LT(-1);
-    setState(41);
-    _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
-    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
-      if (alt == 1) {
-        if (!_parseListeners.empty())
-          triggerExitRuleEvent();
-        previousContext = _localctx;
-        auto newContext = _tracker.createInstance<Prog_rowContext>(_tracker.createInstance<ProgContext>(parentContext, parentState));
-        _localctx = newContext;
-        pushNewRecursionContext(newContext, startState, RuleProg);
-        setState(34);
-
-        if (!(precpred(_ctx, 1))) throw FailedPredicateException(this, "precpred(_ctx, 1)");
-        setState(35);
-        row();
-        setState(37);
-        _errHandler->sync(this);
-
-        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx)) {
-        case 1: {
-          setState(36);
-          match(mygrammarParser::EOF);
-          break;
-        }
-
-        default:
-          break;
-        } 
-      }
-      setState(43);
-      _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
-    }
+   
   }
   catch (RecognitionException &e) {
     _errHandler->reportError(this, e);
     _localctx->exception = std::current_exception();
     _errHandler->recover(this, _localctx->exception);
   }
+
   return _localctx;
 }
 
 bool mygrammarParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
     case 0: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
-    case 2: return progSempred(antlrcpp::downCast<ProgContext *>(context), predicateIndex);
 
   default:
     break;
@@ -610,16 +682,6 @@ bool mygrammarParser::exprSempred(ExprContext *_localctx, size_t predicateIndex)
   switch (predicateIndex) {
     case 0: return precpred(_ctx, 5);
     case 1: return precpred(_ctx, 4);
-
-  default:
-    break;
-  }
-  return true;
-}
-
-bool mygrammarParser::progSempred(ProgContext *_localctx, size_t predicateIndex) {
-  switch (predicateIndex) {
-    case 2: return precpred(_ctx, 1);
 
   default:
     break;

@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "antlr4-runtime/antlr4-runtime.h"
+#include "antlr4-runtime.h"
 #include "mygrammarParser.h"
 
 
@@ -21,19 +21,23 @@ public:
    */
     virtual std::any visitLexprR(mygrammarParser::LexprRContext *context) = 0;
 
+    virtual std::any visitVAR(mygrammarParser::VARContext *context) = 0;
+
     virtual std::any visitDOUBLE(mygrammarParser::DOUBLEContext *context) = 0;
 
     virtual std::any visitExprADDexpr(mygrammarParser::ExprADDexprContext *context) = 0;
 
     virtual std::any visitExprMULexpr(mygrammarParser::ExprMULexprContext *context) = 0;
 
-    virtual std::any visitINTEGER(mygrammarParser::INTEGERContext *context) = 0;
-
     virtual std::any visitExpr_sep(mygrammarParser::Expr_sepContext *context) = 0;
 
-    virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *context) = 0;
+    virtual std::any visitADD_VAR(mygrammarParser::ADD_VARContext *context) = 0;
+
+    virtual std::any visitCout_expr_sep(mygrammarParser::Cout_expr_sepContext *context) = 0;
 
     virtual std::any visitOneLineProg(mygrammarParser::OneLineProgContext *context) = 0;
+
+    virtual std::any visitProg_row(mygrammarParser::Prog_rowContext *context) = 0;
 
 
 };

@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "antlr4-runtime/antlr4-runtime.h"
+#include "antlr4-runtime.h"
 
 
 
@@ -12,8 +12,8 @@
 class  mygrammarLexer : public antlr4::Lexer {
 public:
   enum {
-    INT = 1, DOUBLE = 2, SUB = 3, MUL = 4, ADD = 5, DIV = 6, SEP = 7, LBR = 8, 
-    RBR = 9, WS = 10
+    DOUBLE = 1, NAME = 2, EQ = 3, COUT = 4, SUB = 5, MUL = 6, ADD = 7, DIV = 8, 
+    SEP = 9, LBR = 10, RBR = 11, WS = 12
   };
 
   explicit mygrammarLexer(antlr4::CharStream *input);

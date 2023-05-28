@@ -19,7 +19,7 @@ set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 include_directories("${MP2_INCLUDE}" gtest)
 #include_directories(3rdparty/antlr4/runtime/Cpp/build/bin/include)
 
-set(ANTLR_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/include")
+set(ANTLR_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/include/antlr4-runtime")
 set(CMAKE_SYSTEM_PROGRAM_PATH "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/bin/antlr4-runtime.dll")
 set(antlr4-runtime_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build")
 set(ANTLR4_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/antlr4/runtime/Cpp/build/bin/lib")

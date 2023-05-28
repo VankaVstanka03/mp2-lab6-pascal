@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "antlr4-runtime/antlr4-runtime.h"
+#include "antlr4-runtime.h"
 
 
 
@@ -12,8 +12,8 @@
 class  mygrammarParser : public antlr4::Parser {
 public:
   enum {
-    INT = 1, DOUBLE = 2, SUB = 3, MUL = 4, ADD = 5, DIV = 6, SEP = 7, LBR = 8, 
-    RBR = 9, WS = 10
+    DOUBLE = 1, NAME = 2, EQ = 3, COUT = 4, SUB = 5, MUL = 6, ADD = 7, DIV = 8, 
+    SEP = 9, LBR = 10, RBR = 11, WS = 12
   };
 
   enum {
@@ -65,6 +65,15 @@ public:
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
+  class  VARContext : public ExprContext {
+  public:
+    VARContext(ExprContext *ctx);
+
+    antlr4::tree::TerminalNode *NAME();
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
   class  DOUBLEContext : public ExprContext {
   public:
     DOUBLEContext(ExprContext *ctx);
@@ -98,15 +107,6 @@ public:
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
-  class  INTEGERContext : public ExprContext {
-  public:
-    INTEGERContext(ExprContext *ctx);
-
-    antlr4::tree::TerminalNode *INT();
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
   ExprContext* expr();
   ExprContext* expr(int precedence);
   class  RowContext : public antlr4::ParserRuleContext {
@@ -132,6 +132,29 @@ public:
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
+  class  ADD_VARContext : public RowContext {
+  public:
+    ADD_VARContext(RowContext *ctx);
+
+    antlr4::tree::TerminalNode *NAME();
+    antlr4::tree::TerminalNode *EQ();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEP();
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  Cout_expr_sepContext : public RowContext {
+  public:
+    Cout_expr_sepContext(RowContext *ctx);
+
+    antlr4::tree::TerminalNode *COUT();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEP();
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
   RowContext* row();
 
   class  ProgContext : public antlr4::ParserRuleContext {
@@ -151,8 +174,8 @@ public:
   public:
     Prog_rowContext(ProgContext *ctx);
 
-    ProgContext *prog();
     RowContext *row();
+    ProgContext *prog();
     antlr4::tree::TerminalNode *EOF();
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -169,12 +192,11 @@ public:
   };
 
   ProgContext* prog();
-  ProgContext* prog(int precedence);
+
 
   bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
 
   bool exprSempred(ExprContext *_localctx, size_t predicateIndex);
-  bool progSempred(ProgContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state
